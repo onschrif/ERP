@@ -1,0 +1,175 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageTitle">
+				ORDERS PAGE
+			</ui:define>
+	<ui:define name="pageContent">
+
+		<div class="centredZone">
+	<h:form> 
+	 <p:menubar>
+        <p:submenu label="Manufacturing" icon="ui-icon-document">
+           
+            <p:menuitem value="Production" url="#" />
+            <p:menuitem value="Orders" url="#" />
+           
+        </p:submenu>
+ 
+        <p:submenu label="Edit" icon="ui-icon-pencil">
+            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+        </p:submenu>
+ 
+        
+ 
+       
+ 
+        <p:menuitem value="Quit" url="" icon="ui-icon-close" />
+ 
+       
+    </p:menubar>
+	</h:form>
+	<br />
+	
+	<p:breadCrumb>
+	  <p:menuitem value="Home" url="" />
+    <p:menuitem value="Orders" url="" />
+    
+    
+	</p:breadCrumb>
+	
+	<br />
+	
+	
+	<h:form id="form">
+	
+   
+ <br />
+ <p:dataTable var="ord" value="#{ordersTreat.orders}"   paginator="true" rows="5" rowsPerPageTemplate="5,10"
+ paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+    <p:column headerText="REF Orders">
+        <h:outputText value="#{ord.referenceOrder}" />
+    </p:column>
+ 
+  <p:column headerText="Invoice Day">
+        <h:outputText value="#{ord.invoiceDate}" />
+    </p:column>
+ 
+ <p:column headerText="Recomended Day">
+        <h:outputText value="#{ord.recommendedDate}" />
+    </p:column>
+    
+ <p:column headerText="Quantity to produce">
+        <h:outputText value="#{ord.quantityToOrder}" />
+    </p:column>
+     <p:column headerText="Product">
+        <h:outputText value="#{ord.p.ref}" />
+    </p:column>
+    <p:column headerText="state Orders">
+        <h:outputText value="#{ord.orderState}" />
+    </p:column>
+ 
+         <p:column headerText="Treat" >
+          <p:commandLink title="View Detail" onclick="PF('dlg2').show();" update=":form:ordersDetail">
+                  <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
+                  <f:setPropertyActionListener value="#{ord}" target="#{ordersTreat.selectedOrders}"></f:setPropertyActionListener> 
+           </p:commandLink>
+         </p:column>
+</p:dataTable>
+
+  
+		 <p:dialog header="Treat Order" widgetVar="dlg2" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+		        <p:outputPanel id="ordersDetail" style="text-align:center;">
+		            
+		          	   <h3>Orders Informations</h3><h:outputText value="" />
+		
+		          	   <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5" rendered="#{not empty ordersTreat.selectedOrders}">
+		           
+		     
+		     	   
+		                <h:outputText value="REF Orders:" />
+		                <h:outputText value="#{ordersTreat.selectedOrders.referenceOrder}" />
+		                
+		 				<h:outputText value="Invoice Day:" />
+		                <h:outputText value="#{ordersTreat.selectedOrders.invoiceDate}" />
+		                 </h:panelGrid>
+		                <hr /> 
+		               
+		           	   <h3 style="margin-top:0">Production Informations</h3><h:outputText value="" />
+		           	 
+		           	   <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5" rendered="#{not empty ordersTreat.selectedOrders}">
+		                     
+		 				<h:outputText value="Recomended Day (Ending Day):" />
+		                <h:outputText value="#{ordersTreat.selectedOrders.recommendedDate}" />
+		 
+		 				<h:outputText value="Quantity to produce:" />
+		                 <h:outputText value="#{ordersTreat.selectedOrders.quantityToOrder}" />
+		 
+		              
+						<h:outputText value="Ref Product :" />
+		                 <h:outputText value="#{ordersTreat.selectedOrders.p.ref}" />
+		
+							<h:outputText value="Number Hours:" />
+							<p:inputText id="text1" value="#{ordersTreat.productionAdd.numberHeures}" required="true" >
+								<p:keyFilter for="text1" mask="num"  /> 		
+							</p:inputText>
+							
+		               <p:outputLabel for="emp" value="Responsable(IDemp) :" />
+		  			      <p:selectOneMenu id="emp" value="#{ordersTreat.employeID}" style="width:150px" required="true" >
+		   	              <f:selectItems value="#{manufacturing.listID}" />
+		   	              </p:selectOneMenu>
+		       
+					<f:facet name = "footer">
+		               <h:panelGroup style = "display:block; text-align:center">
+		                        <p:commandButton value="ADD Production" onclick="PF('dlg2').hide();" action="#{ordersTreat.doAddProduction()}" update="growl" icon="ui-icon-plus" />
+		
+		               </h:panelGroup>
+		            </f:facet>
+		
+		 
+		               
+		            </h:panelGrid>
+		        </p:outputPanel>
+		    </p:dialog>
+		 
+		 <p:growl id="growl" showDetail="true" sticky="true" />  
+
+		  <p:dialog header="Confiramtion" widgetVar="dlg" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+		        <p:outputPanel id="confiramtion" style="text-align:center;">
+		            
+		 
+		          	 
+		         <h:panelGrid columns="2" styleClass="text-align:center;" >
+	             <f:facet name="header">
+				        <p:row>
+				            <p:column colspan="2"><h3>Would you like to effect an other Employee ?</h3></p:column>
+				        </p:row>
+	  			  </f:facet>
+			       <f:facet name="footer">
+			        <p:row>
+			            <p:column>
+			             <p:commandButton value="Yes" action="#{ordersTreat.doYes()}" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			            </p:column>
+			            
+			            <p:column  >
+			       		 <p:commandButton value="No"  action="#{ordersTreat.doNo()}" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			            </p:column>
+			        </p:row>
+			        </f:facet>
+		       </h:panelGrid>
+		        </p:outputPanel>
+		    </p:dialog>
+		     	   
+
+	</h:form>
+
+		</div>
+		
+
+	</ui:define>
+</ui:composition>

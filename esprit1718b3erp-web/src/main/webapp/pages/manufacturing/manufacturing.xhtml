@@ -1,0 +1,100 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageTitle">
+				MANUFACTURING PAGE
+			</ui:define>
+	<ui:define name="pageContent">
+
+		<div class="centredZone">
+	<h:form> 
+	 <p:menubar>
+        <p:submenu label="Manufacturing" icon="ui-icon-document">
+           
+            <p:menuitem value="Production" url="#" />
+            <p:menuitem value="Orders" url="#" />
+           
+        </p:submenu>
+ 
+        <p:submenu label="Edit" icon="ui-icon-pencil">
+            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+        </p:submenu>
+ 
+       
+        <p:menuitem value="Quit" url="" icon="ui-icon-close" />
+ 
+       
+    </p:menubar>
+	</h:form>
+	<br />
+	
+	<p:breadCrumb>
+	  <p:menuitem value="Home" url="" />
+    <p:menuitem value="Production" url="" />
+    <p:menuitem value="Add +" url="" />
+    
+	</p:breadCrumb>
+	
+	<br />
+	
+	<h:form>  
+	
+	 <p:growl id="growl" showDetail="true" sticky="true" />  
+ 
+	<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5" >
+	
+	    <p:outputLabel for="pp" value="Product(REF):" />
+        <p:selectOneMenu id="pp" value="#{manufacturing.productRef}" style="width:170px" required="true" >
+              <f:selectItems value="#{manufacturing.listRef}" />
+        </p:selectOneMenu>
+	
+	
+					<h:outputText value="Quantity to produce:" />
+					<p:inputText id="text0"
+						value="#{manufacturing.production.qteToProduce}" required="true">
+						<p:keyFilter for="text0" mask="num" /> 					
+					</p:inputText>
+					
+
+					<p:outputLabel for="event" value="Start Day:" />
+					<p:calendar id="event" value="#{manufacturing.production.startDay}" mindate="{manufacturing.currentDate}" required="true" >
+					</p:calendar>
+
+					<h:outputText value="Number Hours:" />
+					<p:inputText id="text1"
+						value="#{manufacturing.production.numberHeures}" required="true" >
+						<p:keyFilter for="text1" mask="num"  /> 		
+					</p:inputText>
+	
+   
+      <p:outputLabel for="emp" value="Responsable(IDemp) :" />
+        <p:selectOneMenu id="emp" value="#{manufacturing.employeID}" style="width:170px" required="true" >
+              <f:selectItems value="#{manufacturing.listID}" />
+        </p:selectOneMenu>
+        
+    <a></a><a></a><a></a>
+	   <p:commandButton value="ADD " id="withIcon" action="#{manufacturing.doAddProduction()}" update="growl" icon="ui-icon-plus" />
+ 
+	
+	 </h:panelGrid>
+
+				
+</h:form>
+
+ 
+ 
+ 
+   
+	
+	
+
+		</div>
+		
+
+	</ui:define>
+</ui:composition>

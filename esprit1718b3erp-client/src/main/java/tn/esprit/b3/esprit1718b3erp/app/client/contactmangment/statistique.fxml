@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.effect.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="ahmedclientpane" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.contactmangment.StatController">
+   <children>
+      <ImageView fx:id="drawimage" fitHeight="44.0" fitWidth="47.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="7.0">
+         <image>
+            <Image url="@reorder-option-2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="205.0" layoutX="66.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="2.0">
+         <image>
+            <Image url="@Unknown-2.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="709.0" layoutY="371.0" prefHeight="308.0" prefWidth="538.0" style="-fx-background-radius: 40; -fx-background-color: #e0e3eb;">
+         <children>
+            <BarChart fx:id="Barchart1" layoutX="11.0" layoutY="17.0" prefHeight="288.0" prefWidth="518.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </BarChart>
+         </children>
+      </Pane>
+      <Pane layoutX="701.0" layoutY="57.0" prefHeight="302.0" prefWidth="547.0" style="-fx-background-radius: 40; -fx-background-color: #e0e3eb;">
+         <children>
+            <BarChart fx:id="Barchart" layoutX="19.0" layoutY="16.0" prefHeight="288.0" prefWidth="518.0">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+            </BarChart>
+            <Label layoutX="42.0" layoutY="291.0" prefHeight="33.0" prefWidth="233.0" text="Best Supplier" textFill="#273968">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font name="AppleMyungjo Regular" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="97.0" layoutY="76.0" prefHeight="284.0" prefWidth="565.0" style="-fx-background-color: #e0e3eb; -fx-background-radius: 40;">
+         <children>
+            <LineChart fx:id="lineChart" layoutX="5.0" layoutY="25.0" prefHeight="240.0" prefWidth="547.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </Pane>
+      <Pane layoutX="101.0" layoutY="385.0" prefHeight="302.0" prefWidth="567.0" style="-fx-background-radius: 40; -fx-background-color: #e0e3eb;">
+         <children>
+            <TreeTableView fx:id="treestat" layoutX="22.0" layoutY="7.0" prefHeight="292.0" prefWidth="175.0">
+               <columns>
+                  <TreeTableColumn fx:id="stat" prefWidth="237.0" />
+               </columns>
+            </TreeTableView>
+            <PieChart fx:id="Piechart2" layoutX="200.0" layoutY="25.0" prefHeight="270.0" prefWidth="357.0" />
+         </children>
+      </Pane>
+      <ImageView fx:id="scrennshot" fitHeight="51.0" fitWidth="143.0" layoutX="283.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@screenshot.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="744.0" layoutY="32.0" prefHeight="33.0" prefWidth="233.0" text="Best Client" textFill="#273968">
+         <effect>
+            <Blend />
+         </effect>
+         <font>
+            <Font name="AppleMyungjo Regular" size="19.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="opacitypane" layoutX="2.0" layoutY="-2.0" opacity="0.09" prefHeight="721.0" prefWidth="1309.0" style="-fx-background-color: #000;" />
+      <AnchorPane fx:id="drawPane" layoutX="20.0" layoutY="63.0" prefHeight="655.0" prefWidth="264.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <GridPane layoutX="58.0" layoutY="42.0" prefHeight="654.0" prefWidth="264.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="menuclientmangmet" onAction="#goclientmang" prefHeight="131.0" prefWidth="272.0" style="-fx-background-color: #e0e3eb;" text="CLIENT MANAGMENT" textFill="#2d52a3">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menusuppliersmangment" onAction="#gosuppmang" prefHeight="222.0" prefWidth="413.0" style="-fx-background-color: #e0e3eb;" text="SUPPLIERS MANAGMENT" textFill="#2d52a3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menupromotion" onAction="#gopromo" prefHeight="299.0" prefWidth="333.0" style="-fx-background-color: #e0e3eb;" text="PROMOTION" textFill="#2d52a3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menustatistics" onAction="#gostat" prefHeight="367.0" prefWidth="371.0" style="-fx-background-color: #e0e3eb;" text="STATISTICS" textFill="#2d52a3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menulogout" onAction="#logout" prefHeight="313.0" prefWidth="413.0" style="-fx-background-color: #e0e3eb;" text="Log Out" textFill="#2d52a3" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menuinsaclient" onAction="#goinsclient" prefHeight="367.0" prefWidth="371.0" style="-fx-background-color: #e0e3eb;" text="UNSATISFIED CLIENT" textFill="#2d52a3" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

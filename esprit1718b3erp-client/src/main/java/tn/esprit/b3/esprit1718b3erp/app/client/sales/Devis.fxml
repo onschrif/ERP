@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="DevisPane" prefHeight="700.0" prefWidth="1300.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.sales.DevisController">
+   <children>
+      <ImageView fx:id="back" fitHeight="43.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../../../../../../../../../Desktop/IntegrationFinale/Tunisia_Mall/src/tm/assets/nav.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-250.0" layoutY="-0.0" prefHeight="769.0" prefWidth="250.0" styleClass="box">
+         <children>
+            <HBox alignment="BASELINE_LEFT" prefHeight="70.0" spacing="5.0" styleClass="box-logo" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="245.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="logo" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: transparent;" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="60.0" pannable="true" prefViewportHeight="710.0" prefViewportWidth="220.0" styleClass="scroll" stylesheets="@../login/style.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <content>
+                  <VBox prefHeight="784.0" prefWidth="248.0" spacing="5.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <VBox layoutY="35.0" styleClass="box-menus" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+                           <children>
+                              <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Sales Managment">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao" layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton fx:id="btCatalogar" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" onAction="#toOrders" prefWidth="187.0" text="Orders" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-invoice" />
+                                       </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoCatalogacao" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btDesginacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" onAction="#toOpportunty" prefWidth="220.0" text="Pipline" textFill="#ebe9e9" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-bill" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btEstratigrafia" alignment="CENTER_LEFT" layoutX="40.0" layoutY="40.0" maxWidth="215.0" mnemonicParsing="false" prefWidth="215.0" text="Quotation Generator" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-cash" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                              <ToggleButton fx:id="btCatalogacao1" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Delivery">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus1" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao2" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton fx:id="btCatalogar1" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" prefWidth="187.0" text="Delivery Orders" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-invoice" />
+                                       </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoCatalogacao1" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btDesginacao1" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" prefWidth="220.0" text="Cars" toggleGroup="$grupoCatalogacao1">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-bill" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane maxHeight="30.0" minHeight="30.0" prefHeight="30.0" styleClass="box-user">
+                           <children>
+                              <Label fx:id="lbUser" maxWidth="150.0" prefWidth="150.0" styleClass="lb-user" text="Flen Ben Foulen" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                              <Button layoutX="145.0" layoutY="4.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="115.0" styleClass="menu-sair" text="Disconnect" />
+                           </children>
+                        </AnchorPane>
+                        <VBox fx:id="boxCatalogacao1" styleClass="box-submenus" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <ImageView fx:id="drawerImage" fitHeight="43.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../../../../../../../../../../../../Desktop/IntegrationFinale/Tunisia_Mall/src/tm/assets/nav.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button layoutX="1239.0" layoutY="19.0" mnemonicParsing="false" onAction="#close" prefHeight="33.0" prefWidth="71.0" styleClass="close" text="Fechar" />
+      <Button layoutX="1165.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="33.0" prefWidth="82.0" styleClass="minimizar" text="Minimizar" />
+      <Pane fx:id="tablepane1" layoutX="10.0" layoutY="10.0" prefHeight="713.0" prefWidth="1177.0">
+         <children>
+            <Button id="hamb" layoutX="7.0" mnemonicParsing="false" onAction="#dsh" prefHeight="44.0" prefWidth="48.0" style="-fx-background-color: transparent;" styleClass="hamb" stylesheets="@../login/style.css" />
+            <JFXComboBox fx:id="refc" layoutX="225.0" layoutY="59.0" prefHeight="32.0" prefWidth="329.0" promptText="Choose Order Reference" />
+            <JFXButton fx:id="bt1" layoutX="638.0" layoutY="57.0" onAction="#generate" prefHeight="38.0" prefWidth="154.0" style="-fx-background-color: #69ee7b; -fx-background-radius: 50;" text="Generate Devis" textFill="WHITE">
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="899.0" layoutY="57.0" onAction="#convert" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: #ff4444; -fx-background-radius: 50;" text="PDF" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="510.0" layoutY="256.0" prefHeight="29.0" prefWidth="140.0" text="Quantity" textFill="#2b138d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="735.0" layoutY="257.0" prefHeight="29.0" prefWidth="140.0" text="Price Per Item" textFill="#2b138d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="gridP" layoutX="224.0" layoutY="311.0" prefHeight="311.0" prefWidth="916.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="65.66668701171875" minHeight="10.0" prefHeight="60.333343505859375" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="76.33334350585938" minHeight="10.0" prefHeight="55.666656494140625" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="81.66668701171875" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="83.66668701171875" minHeight="10.0" prefHeight="58.33331298828125" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="58.3333740234375" minHeight="10.0" prefHeight="51.66668701171875" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Label layoutX="984.0" layoutY="256.0" prefHeight="29.0" prefWidth="140.0" text="Total" textFill="#2b138d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="867.0" layoutY="626.0" text="Total " underline="true">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="total" layoutX="984.0" layoutY="626.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="274.0" layoutY="257.0" prefHeight="29.0" prefWidth="133.0" text="Product Name" textFill="#2b138d">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator layoutX="225.0" layoutY="285.0" prefHeight="2.0" prefWidth="814.0" />
+            <Separator layoutX="225.0" layoutY="253.0" prefHeight="2.0" prefWidth="814.0" />
+            <Separator layoutX="225.0" layoutY="158.0" prefHeight="2.0" prefWidth="814.0" />
+            <Label layoutX="274.0" layoutY="175.0" prefHeight="25.0" prefWidth="188.0" text="Company : VERAX MAGUS" />
+            <Label layoutX="274.0" layoutY="221.0" text="Client : " />
+            <Label fx:id="clientLabel" layoutX="333.0" layoutY="221.0">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="748.0" layoutY="203.0" text="Order Reference : " />
+            <Label layoutX="748.0" layoutY="227.0" text="Quotation Date : " />
+            <Label layoutX="748.0" layoutY="177.0" text="Issuance Address : Tunis, Tunisia" />
+            <Label fx:id="ref" layoutX="850.0" layoutY="203.0" />
+            <Separator layoutX="225.0" layoutY="680.0" prefWidth="814.0" />
+            <Label fx:id="quotation" layoutX="850.0" layoutY="227.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

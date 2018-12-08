@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="dash-anchor" fx:id="dashpane" maxHeight="700.0" minHeight="700.0" minWidth="1300.0" prefHeight="700.0" styleClass="dash-anchor" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.delivery.DashController">
+   <children>
+      <Pane layoutX="964.0" layoutY="418.0" prefHeight="267.0" prefWidth="326.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;" />
+      <Pane layoutX="16.0" layoutY="75.0" prefHeight="334.0" prefWidth="317.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Pane layoutY="203.0" prefHeight="110.0" prefWidth="319.0" />
+         </children></Pane>
+      <Pane layoutX="339.0" layoutY="75.0" prefHeight="335.0" prefWidth="302.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <PieChart fx:id="pie2" layoutX="8.0" layoutY="27.0" prefHeight="291.0" prefWidth="284.0" />
+         </children></Pane>
+      <Pane layoutX="339.0" layoutY="419.0" prefHeight="269.0" prefWidth="617.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;" />
+      <Pane layoutX="649.0" layoutY="73.0" prefHeight="335.0" prefWidth="322.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <PieChart fx:id="pie3" layoutX="8.0" layoutY="23.0" prefHeight="291.0" prefWidth="302.0" />
+         </children>
+      </Pane>
+      <Pane layoutX="980.0" layoutY="75.0" prefHeight="335.0" prefWidth="308.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <PieChart fx:id="pie4" layoutX="13.0" layoutY="26.0" prefHeight="291.0" prefWidth="284.0" />
+         </children></Pane>
+      <HBox prefHeight="60.0" prefWidth="1207.0" styleClass="box-topo" stylesheets="@../../../../../../../../../../../../../../git/esprit1718b3erp/esprit1718b3erp/esprit1718b3erp-client/src/main/java/tn/esprit/b3/esprit1718b3erp/app/client/login/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lbTitulo" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="1200.0" styleClass="titulo" text="             Dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <GridPane fx:id="telaCadastro" hgap="10.0" visible="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <Label styleClass="lb-info-requerido" text="Formação" />
+            <TextField fx:id="txtFormacao" styleClass="campo" visible="true" GridPane.rowIndex="1" />
+            <Label layoutX="10.0" layoutY="17.0" styleClass="lb-info-requerido" text="Grupo" GridPane.rowIndex="2" />
+            <TextField fx:id="txtGrupo" layoutX="10.0" layoutY="40.0" styleClass="campo" visible="true" GridPane.rowIndex="3" />
+            <Label styleClass="lb-info" text="Descrição" GridPane.rowIndex="4" />
+            <TextArea fx:id="txtDescricao" wrapText="true" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="35.0" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="35.0" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Button layoutX="1167.0" mnemonicParsing="false" onAction="#minimize" prefHeight="30.0" prefWidth="78.0" styleClass="minimizar" text="Minimizar" />
+      <Button layoutX="1229.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="71.0" styleClass="close" text="Fechar" />
+      <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#dsh" prefHeight="54.0" prefWidth="69.0" style="-fx-background-color: transparent;" styleClass="hamb" text="Button" />
+      <PieChart fx:id="pie1" layoutX="26.0" layoutY="94.0" prefHeight="291.0" prefWidth="292.0" />
+      <Pane layoutX="12.0" layoutY="420.0" prefHeight="271.0" prefWidth="319.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;" />
+   </children>
+   <stylesheets>
+      <URL value="@../../../../../../../../../../../../../../git/esprit1718b3erp/esprit1718b3erp/esprit1718b3erp-client/src/main/java/tn/esprit/b3/esprit1718b3erp/app/client/css/default.css" />
+      <URL value="@../../../../../../../../../../../../../../git/esprit1718b3erp/esprit1718b3erp/esprit1718b3erp-client/src/main/java/tn/esprit/b3/esprit1718b3erp/app/client/css/custom.css" />
+      <URL value="@../login/style.css" />
+   </stylesheets>
+</AnchorPane>

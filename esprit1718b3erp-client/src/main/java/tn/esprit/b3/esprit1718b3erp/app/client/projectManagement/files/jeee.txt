@@ -1,0 +1,6 @@
+- gestion des resources materielles
+- gestion des competences
+- etude du projet:
+	- cout 
+	- benefices
+	- incident

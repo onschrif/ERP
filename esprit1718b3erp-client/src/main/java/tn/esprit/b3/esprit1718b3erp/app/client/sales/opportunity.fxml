@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="opportunityPane" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.sales.OpportunityController">
+   <children>
+      <AnchorPane layoutX="-250.0" layoutY="10.0" prefHeight="769.0" prefWidth="250.0" styleClass="box">
+         <children>
+            <HBox alignment="BASELINE_LEFT" prefHeight="70.0" spacing="5.0" styleClass="box-logo" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="245.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="logo" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: transparent;" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="60.0" pannable="true" prefViewportHeight="710.0" prefViewportWidth="220.0" styleClass="scroll" stylesheets="@../login/style.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <content>
+                  <VBox prefHeight="784.0" prefWidth="248.0" spacing="5.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <VBox layoutY="35.0" styleClass="box-menus" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+                           <children>
+                              <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Sales Managment">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao" layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton fx:id="btCatalogar" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" onAction="#toOrders" prefWidth="187.0" text="Orders" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-invoice" />
+                                       </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoCatalogacao" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btDesginacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" prefWidth="220.0" text="Pipline" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-bill" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btEstratigrafia" alignment="CENTER_LEFT" layoutX="40.0" layoutY="40.0" maxWidth="215.0" mnemonicParsing="false" onAction="#toDevis" prefWidth="215.0" text="Quotation Generator" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-cash" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                              <ToggleButton fx:id="btCatalogacao1" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Delivery">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus1" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao2" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton fx:id="btCatalogar1" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" prefWidth="187.0" text="Delivery Orders" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-invoice" />
+                                       </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoCatalogacao1" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btDesginacao1" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" prefWidth="220.0" text="Cars" toggleGroup="$grupoCatalogacao1">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-bill" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane maxHeight="30.0" minHeight="30.0" prefHeight="30.0" styleClass="box-user">
+                           <children>
+                              <Label fx:id="lbUser" maxWidth="150.0" prefWidth="150.0" styleClass="lb-user" text="Flen Ben Foulen" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                              <Button layoutX="145.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" styleClass="menu-sair" text="Disconnect" />
+                           </children>
+                        </AnchorPane>
+                        <VBox fx:id="boxCatalogacao1" styleClass="box-submenus" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <ImageView fx:id="drawerImage" fitHeight="43.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../../../../../../../../../../../../../Desktop/IntegrationFinale/Tunisia_Mall/src/tm/assets/nav.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tbOps" layoutX="18.0" layoutY="95.0" onMousePressed="#fill" prefHeight="600.0" prefWidth="867.0">
+        <columns>
+          <TableColumn fx:id="col1" prefWidth="115.0" text="ID opportunity" />
+          <TableColumn fx:id="col2" prefWidth="78.0" text="Client" />
+            <TableColumn fx:id="col3" prefWidth="147.0" text="Responsible" />
+            <TableColumn fx:id="col4" prefWidth="175.0" text="Start Opportunity Date" />
+            <TableColumn fx:id="col5" prefWidth="115.0" text="Close Date" />
+            <TableColumn fx:id="col6" prefWidth="100.0" text="Status" />
+            <TableColumn fx:id="col7" prefWidth="136.0" text="Progression % " />
+        </columns>
+      </TableView>
+      <Pane fx:id="displaypane" layoutX="894.0" layoutY="21.0" prefHeight="694.0" prefWidth="426.0">
+         <children>
+            <JFXTextField fx:id="searchtf" focusColor="#ec0122" labelFloat="true" layoutX="26.0" layoutY="47.0" maxWidth="426.0" minWidth="289.0" prefHeight="36.0" prefWidth="388.0" promptText="Search" unFocusColor="#dadada" />
+            <HBox alignment="CENTER" layoutX="15.0" layoutY="108.0" prefHeight="52.0" prefWidth="401.0">
+               <children>
+                  <JFXButton id="BTNS" fx:id="btn1" onAction="#addOpportunity" prefHeight="52.0" prefWidth="75.0" style="-fx-background-color: #00a9e7;" text="ADD" textFill="WHITE" />
+                  <JFXButton id="BTNS" fx:id="btn2" onAction="#DeleteOpportunity" prefHeight="52.0" prefWidth="75.0" style="-fx-background-color: #00b56f;" text="DELETE" textFill="WHITE" />
+                  <JFXButton id="BTNS" fx:id="btn3" onAction="#editOpportunity" prefHeight="52.0" prefWidth="75.0" style="-fx-background-color: #ff5656;" text="EDIT" textFill="WHITE" />
+                  <JFXButton id="BTNS" fx:id="btn4" prefHeight="52.0" prefWidth="75.0" style="-fx-background-color: #273968;" text="CLEAR" textFill="WHITE" />
+                  <JFXButton id="BTNS" fx:id="btn5" prefHeight="52.0" prefWidth="77.0" style="-fx-background-color: orange;" text="-&gt; ORDER" textFill="WHITE" />
+               </children>
+            </HBox>
+            <GridPane fx:id="ordergrid" layoutX="19.0" layoutY="213.0" prefHeight="464.0" prefWidth="401.0">
+               <children>
+                  <JFXComboBox fx:id="comcb" prefHeight="31.0" prefWidth="392.0" promptText="Responsible" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <children>
+                        <JFXComboBox fx:id="prog" layoutX="-1.0" layoutY="2.0" prefHeight="34.0" prefWidth="388.0" promptText="Pogression %" />
+                     </children></Pane>
+                  <JFXComboBox fx:id="ccb" prefHeight="25.0" prefWidth="390.0" promptText="Client" GridPane.rowIndex="1" />
+                  <JFXComboBox fx:id="statuscb" prefHeight="25.0" prefWidth="388.0" promptText="Status" GridPane.rowIndex="3" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="116.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="151.0" minHeight="10.0" prefHeight="44.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </Pane>
+      <Button id="hamb" fx:id="btn1" layoutX="12.0" layoutY="16.0" mnemonicParsing="false" onAction="#dsh" prefHeight="44.0" prefWidth="48.0" style="-fx-background-color: transparent;" styleClass="hamb" stylesheets="@../login/style.css" />
+      <Text fill="#ff8400" layoutX="18.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opportunities " wrappingWidth="195.0" />
+   </children>
+</AnchorPane>

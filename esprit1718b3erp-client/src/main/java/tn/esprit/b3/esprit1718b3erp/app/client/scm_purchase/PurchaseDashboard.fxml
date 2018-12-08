@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="dash-anchor" fx:id="dashpane" maxHeight="700.0" minHeight="700.0" minWidth="1300.0" prefHeight="700.0" styleClass="dash-anchor" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.scm_purchase.DashboardPurchaseController">
+    <children>
+    <!-- Les 7 espaces blancs -->
+      <Pane layoutX="763.0" layoutY="354.0" prefHeight="330.0" prefWidth="510.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+                  <PieChart fx:id="pie" layoutX="41.0" layoutY="50.0" prefHeight="280.0" prefWidth="445.0" />
+         </children></Pane>
+      <Pane layoutX="46.0" layoutY="75.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;" />
+      <Pane layoutX="46.0" layoutY="145.0" prefHeight="199.0" prefWidth="700.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+                  <Label layoutX="261.0" layoutY="-61.0" minWidth="-Infinity" prefHeight="43.0" prefWidth="164.0" text="Welcome !" wrapText="true">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                    
+                  <JFXButton fx:id="btdelete" layoutX="45.0" layoutY="28.0" onAction="#toProduct" prefHeight="56.0" prefWidth="108.0" style="-fx-background-color: #00b56f ;" text="Product" textFill="WHITE" />      
+                  <JFXButton fx:id="btdelete1" layoutX="220.0" layoutY="28.0" onAction="#toBillofMaterial" prefHeight="56.0" prefWidth="108.0" style="-fx-background-color: #00b56f ;" text="Bill Of Material" textFill="WHITE" />
+                  <JFXButton fx:id="btdelete2" layoutX="391.0" layoutY="28.0" onAction="#toOrder" prefHeight="56.0" prefWidth="108.0" style="-fx-background-color: #ff5656;" text="Orders" textFill="WHITE" />
+                  <JFXButton fx:id="btdelete3" layoutX="45.0" layoutY="125.0" onAction="#toLocation" prefHeight="56.0" prefWidth="108.0" style="-fx-background-color: #00a9e7 ;" text="Location" textFill="WHITE" />
+                  <JFXButton fx:id="btdelete4" layoutX="561.0" layoutY="28.0" onAction="#toPurchaseOrder" prefHeight="56.0" prefWidth="108.0" style="-fx-background-color: #ff5656 ;" text="Puchase Order" textFill="WHITE" />
+                  <JFXButton fx:id="btdelete31" layoutX="220.0" layoutY="125.0" onAction="#toUpdateInventoy" prefHeight="56.0" prefWidth="108.0" style="-fx-background-color: #00a9e7 ;" text="Stock" textFill="WHITE" />
+                  <JFXButton fx:id="btdelete32" layoutX="391.0" layoutY="125.0" onAction="#toMovement" prefHeight="56.0" prefWidth="108.0" style="-fx-background-color: #00a9e7 ;" text="Movement" textFill="WHITE" />
+                  <JFXButton fx:id="btdelete33" layoutX="561.0" layoutY="125.0" onAction="#toAdjustment" prefHeight="56.0" prefWidth="108.0" style="-fx-background-color: #00a9e7 ;" text="Ajustment" textFill="WHITE" />
+         </children></Pane>
+      <Pane layoutX="46.0" layoutY="356.0" prefHeight="330.0" prefWidth="700.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+                  <Label layoutX="14.0" layoutY="3.0" prefHeight="22.0" prefWidth="269.0" styleClass="box-subtitulos" text=" List of Products                                              " />
+              
+                                <!-- Page  -->
+              
+                  
+                                    <!-- table 1 : Product -->
+                    <TableView fx:id="tableProduct" layoutX="14.0" layoutY="39.0" prefHeight="280.0" prefWidth="675.0">
+                     <columns>
+                        <TableColumn fx:id="col1" prefWidth="100.0" text="Reference" />
+                        <TableColumn fx:id="col2" prefWidth="150.0" text="Name" />
+                        <TableColumn fx:id="col3" prefWidth="108.0" text="Price" />
+                        <TableColumn fx:id="col5" prefWidth="155.0" text="Nature" />
+                        <TableColumn fx:id="col6" prefWidth="149.0" text="Type" />
+                     </columns>
+                  </TableView>
+         </children></Pane>
+      <Pane layoutX="763.0" layoutY="73.0" prefHeight="86.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+                  <Label layoutX="13.0" layoutY="3.0" prefHeight="22.0" prefWidth="213.0" styleClass="box-subtitulos" text="        Total Number of Supplier(s)" />
+                  <Label fx:id="lblnbrsupp" layoutX="85.0" layoutY="29.0" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" wrapText="true">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+         </children></Pane>
+      <Pane layoutX="763.0" layoutY="165.0" prefHeight="86.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+                  <Label fx:id="lblnbrprd" layoutX="84.0" layoutY="33.0" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" wrapText="true">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="6.0" prefHeight="22.0" prefWidth="213.0" styleClass="box-subtitulos" text="        Total Number of Product(s)" />
+         </children></Pane>
+    
+    
+        <!--Purchase men fou9 -->
+        <HBox prefHeight="60.0" prefWidth="1207.0" styleClass="box-topo" stylesheets="@../login/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="lbTitulo" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="1260.0" styleClass="titulo" text="               Supply Chain" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS">
+                </Label>
+            </children>
+        </HBox>
+       
+       <!-- Aucun !! -->
+        <GridPane fx:id="telaCadastro" hgap="10.0" visible="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label styleClass="lb-info-requerido" text="Formação" />
+                <TextField fx:id="txtFormacao" styleClass="campo" visible="true" GridPane.rowIndex="1" />
+                <Label layoutX="10.0" layoutY="17.0" styleClass="lb-info-requerido" text="Grupo" GridPane.rowIndex="2" />
+                <TextField fx:id="txtGrupo" layoutX="10.0" layoutY="40.0" styleClass="campo" visible="true" GridPane.rowIndex="3" />
+                <Label styleClass="lb-info" text="Descrição" GridPane.rowIndex="4" />
+                <TextArea fx:id="txtDescricao" wrapText="true" GridPane.rowIndex="5" />
+            </children>
+        </GridPane>
+            <Label layoutX="770.0" layoutY="368.0" prefHeight="22.0" prefWidth="484.0" styleClass="box-subtitulos" text="        Product Chart (Nature)" />
+            <Pane layoutX="763.0" layoutY="262.0" prefHeight="86.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+                  <Label layoutX="13.0" layoutY="3.0" prefHeight="22.0" prefWidth="213.0" styleClass="box-subtitulos" text="        Total Number of Purchase" />
+                  <Label fx:id="lblnbrpurch" layoutX="86.0" layoutY="28.0" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" wrapText="true">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+         </children></Pane>
+
+                             
+       
+      <AnchorPane prefHeight="50.0" styleClass="box-menus-subtela" visible="false" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Button layoutX="1167.0" mnemonicParsing="false" onAction="#minimize" prefHeight="30.0" prefWidth="78.0" styleClass="minimizar" text="Minimizar" />
+      <Button layoutX="1229.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="71.0" styleClass="close" text="Fechar" />
+     
+     <!-- menu  -->
+      <AnchorPane layoutX="-250.0" prefHeight="769.0" prefWidth="250.0" styleClass="box">
+         <children>
+            <HBox alignment="BASELINE_LEFT" prefHeight="70.0" spacing="5.0" styleClass="box-logo" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="245.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="logo" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#home" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: transparent;" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="60.0" pannable="true" prefViewportHeight="710.0" prefViewportWidth="220.0" styleClass="scroll" stylesheets="@../login/style.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <content>
+                  <VBox prefHeight="784.0" prefWidth="248.0" spacing="5.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <VBox layoutY="35.0" styleClass="box-menus" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+                           <children>
+                            
+                               <ToggleButton fx:id="btVisitas" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toPurchaseOrder" text="Purchase">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                             
+                          
+                              <ToggleButton fx:id="btVisitas" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toSuppliers" text="Suppliers" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-supplier" />
+                                 </styleClass>
+                              </ToggleButton>
+                            
+                             <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Articles" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-empl" />
+                                    
+                                 </styleClass>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao" layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    
+                                    <ToggleButton fx:id="btDesginacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" onAction="#toProduct" prefWidth="220.0" text="Product">
+		                                  <styleClass>
+		                                    <String fx:value="menus" />
+		                                    <String fx:value="menu-product" />
+		                                 </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoCatalogacao" />
+                                       </toggleGroup>
+		                              </ToggleButton>
+		                                    
+		                                    
+		                                    <ToggleButton fx:id="btDesginacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" onAction="#toBillofMaterial" prefWidth="220.0" text="Bill of Material" toggleGroup="$grupoCatalogacao">
+					                             <styleClass>
+			                                    <String fx:value="menus" />
+			                                    <String fx:value="menu-billofMaterial" />
+			                                 </styleClass>
+			                              </ToggleButton>
+                                 </children>
+                              </VBox>
+                             
+                              <ToggleButton fx:id="btRelatorios" alignment="CENTER_LEFT" layoutX="10.0" layoutY="300.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#home" text="Statistics" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-relatorios" />
+                                 </styleClass>
+                              </ToggleButton>
+                          
+                              <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Manufacturing">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-bank" />
+                                    
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao" layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    
+                                    <ToggleButton fx:id="btDesginacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" onAction="#toOrder" prefWidth="220.0" text="Orders" toggleGroup="$grupoCatalogacao">
+		                                  <styleClass>
+		                                    <String fx:value="menus" />
+		                                    <String fx:value="menu-bill" />
+		                                 </styleClass>
+		                              </ToggleButton>
+		                                    
+		                   
+                                 </children>
+                              </VBox>
+                             
+                             <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Inventory">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-stock" />
+                                    <String fx:value="menu-grupo" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao" layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton fx:id="btCatalogar" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" onAction="#toLocation" prefWidth="187.0" text="Inventory Location" textFill="WHITE" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-empl" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    
+                                    <ToggleButton fx:id="btDesginacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" onAction="#toUpdateInventoy" prefWidth="220.0" text="Update inventory" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-mov" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    
+                                    <ToggleButton fx:id="btDesgin" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" maxWidth="220.0" mnemonicParsing="false" onAction="#toMovement" prefWidth="220.0" text="Inventory movement" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-bill" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    
+                                 </children>
+                              </VBox>
+                             
+                              <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Resupply">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" onAction="#toAdjustment" prefWidth="187.0" text="Inventory Adjustment" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-invoice" />
+                                       </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    
+                                 
+                                    
+                                 </children>
+                              </VBox>
+                             
+                              
+                              
+                              <ToggleButton fx:id="btRelatorios" alignment="CENTER_LEFT" layoutX="10.0" layoutY="300.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Statistics" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-relatorios" />
+                                 </styleClass>
+                              </ToggleButton>
+                              
+                            </children>
+                        </VBox>
+                        <AnchorPane maxHeight="30.0" minHeight="30.0" prefHeight="30.0" styleClass="box-user">
+                           <children>
+                              <Label fx:id="lbUser" maxWidth="150.0" prefWidth="150.0" styleClass="lb-user" text="Abdennadher Hamza" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                              <Button layoutX="145.0" layoutY="4.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="115.0" styleClass="menu-sair" text="Disconnect" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#dsh" prefHeight="54.0" prefWidth="69.0" style="-fx-background-color: transparent;" styleClass="hamb" text="Button" />
+      <Pane layoutX="1025.0" layoutY="73.0" prefHeight="86.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="13.0" layoutY="3.0" prefHeight="22.0" prefWidth="213.0" styleClass="box-subtitulos" text="        Total Number Product in Stcok" />
+            <Label fx:id="lblnbrStock" layoutX="85.0" layoutY="29.0" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" wrapText="true">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="1025.0" layoutY="165.0" prefHeight="86.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="13.0" layoutY="3.0" prefHeight="22.0" prefWidth="213.0" styleClass="box-subtitulos" text="        Total Number of Movement(s)" />
+            <Label fx:id="lblnbrMvt" layoutX="85.0" layoutY="29.0" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" wrapText="true">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="1025.0" layoutY="262.0" prefHeight="86.0" prefWidth="240.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="13.0" layoutY="3.0" prefHeight="22.0" prefWidth="213.0" styleClass="box-subtitulos" text="        Total Number of Inventory Location" />
+            <Label fx:id="lblnbrLocation" layoutX="85.0" layoutY="29.0" minWidth="-Infinity" prefHeight="43.0" prefWidth="117.0" wrapText="true">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+    </children>
+    <stylesheets>
+        <URL value="@../css/default.css" />
+        <URL value="@../css/custom.css" />
+      <URL value="@../login/style.css" />
+    </stylesheets>
+</AnchorPane>

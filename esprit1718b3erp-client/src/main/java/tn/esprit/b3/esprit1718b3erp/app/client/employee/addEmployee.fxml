@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="dash-anchor" maxHeight="700.0" minHeight="700.0" minWidth="1050.0" prefHeight="700.0" styleClass="dash-anchor" stylesheets="@../login/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.employee.EmployeeController">
+   <children>
+      <Pane layoutX="14.0" layoutY="97.0" prefHeight="599.0" prefWidth="335.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <JFXTextField fx:id="registNumtxt" focusColor="BLACK" labelFloat="true" layoutX="12.0" layoutY="64.0" prefHeight="30.0" prefWidth="309.0" promptText="Registration Number" unFocusColor="BLACK" />
+            <JFXTextField fx:id="nictxt" focusColor="BLACK" labelFloat="true" layoutX="10.0" layoutY="139.0" prefHeight="27.0" prefWidth="309.0" promptText="National Identity Number" unFocusColor="BLACK" />
+            <Label layoutX="12.0" layoutY="14.0" prefHeight="32.0" prefWidth="309.0" styleClass="box-subtitulos" text="Personal Information">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="nationalitytxt" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="552.0" prefHeight="27.0" prefWidth="309.0" promptText="Nationality" unFocusColor="BLACK" />
+            <Label layoutX="14.0" layoutY="354.0" text="Gender ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="fName" focusColor="BLACK" labelFloat="true" layoutX="13.0" layoutY="219.0" prefHeight="27.0" prefWidth="309.0" promptText="First Name" unFocusColor="BLACK" />
+            <JFXTextField fx:id="lName" focusColor="BLACK" labelFloat="true" layoutX="12.0" layoutY="300.0" prefHeight="27.0" prefWidth="309.0" promptText="LastName" unFocusColor="BLACK" />
+            <JFXDatePicker fx:id="dateofBirth" defaultColor="BLACK" layoutX="10.0" layoutY="389.0" prefHeight="27.0" prefWidth="309.0" promptText="Birth Day" />
+            <JFXTextField fx:id="agetxt" focusColor="BLACK" labelFloat="true" layoutX="10.0" layoutY="441.0" onMouseClicked="#showAge" prefHeight="27.0" prefWidth="309.0" promptText="Age" unFocusColor="BLACK" />
+            <Label layoutX="14.0" layoutY="498.0" text="Marital Status">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="genderboxtxt" layoutX="73.0" layoutY="352.0" prefHeight="25.0" prefWidth="244.0" style="-fx-background-color: #DCDCDC;" />
+            <ChoiceBox fx:id="maritaltxt" layoutX="105.0" layoutY="496.0" prefHeight="25.0" prefWidth="215.0" style="-fx-background-color: #DCDCDC;" />
+         </children>
+      </Pane>
+      <Pane prefHeight="53.0" prefWidth="1050.0" style="-fx-background-color: #273968;">
+         <children>
+            <Label layoutX="367.0" layoutY="7.0" prefHeight="40.0" prefWidth="316.0" text="EMPLOYEE REGISTRATION DETAILS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="358.0" layoutY="97.0" prefHeight="599.0" prefWidth="335.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="12.0" layoutY="29.0" prefHeight="18.0" prefWidth="309.0" styleClass="box-subtitulos" text="Contact Information">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="emailtxt" focusColor="BLACK" labelFloat="true" layoutX="12.0" layoutY="72.0" prefHeight="27.0" prefWidth="309.0" promptText="Email" unFocusColor="BLACK" />
+            <JFXTextField fx:id="mobiletxt" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="143.0" prefHeight="27.0" prefWidth="309.0" promptText="Mobile" unFocusColor="BLACK" />
+            <JFXTextField fx:id="phonetxt" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="214.0" prefHeight="27.0" prefWidth="309.0" promptText="Phone" unFocusColor="BLACK" />
+            <JFXTextField fx:id="addresstxt" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="293.0" prefHeight="27.0" prefWidth="309.0" promptText="Address" unFocusColor="BLACK" />
+         </children>
+      </Pane>
+      <JFXButton fx:id="btnDiscardE" layoutX="101.0" layoutY="53.0" onAction="#discardE" prefHeight="53.0" prefWidth="74.0" ripplerFill="#2422b5" style="-fx-background-color: #ff0000;" text="Discard" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnSaveE" layoutX="27.0" layoutY="53.0" onAction="#addEmployee" prefHeight="53.0" prefWidth="74.0" ripplerFill="#2422b5" style="-fx-background-color: #008000;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <Pane layoutX="701.0" layoutY="97.0" prefHeight="599.0" prefWidth="335.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="12.0" layoutY="29.0" prefHeight="18.0" prefWidth="309.0" styleClass="box-subtitulos" text="Work Information">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="departmenttxt" layoutX="98.0" layoutY="78.0" prefHeight="25.0" prefWidth="215.0" style="-fx-background-color: #DCDCDC;" />
+            <Label layoutX="12.0" layoutY="81.0" text="Department">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="jobtxt" focusColor="BLACK" labelFloat="true" layoutX="11.0" layoutY="214.0" prefHeight="27.0" prefWidth="316.0" promptText="Job Position" unFocusColor="BLACK" />
+            <JFXTextField fx:id="managertxt" focusColor="BLACK" labelFloat="true" layoutX="12.0" layoutY="142.0" onMouseClicked="#showManager" prefHeight="27.0" prefWidth="309.0" promptText="Manager" unFocusColor="BLACK" />
+            <JFXTextField fx:id="salarytxt" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="293.0" prefHeight="27.0" prefWidth="309.0" promptText="Salary" unFocusColor="BLACK" />
+            <JFXTextField fx:id="banktxt" focusColor="BLACK" labelFloat="true" layoutX="14.0" layoutY="368.0" prefHeight="27.0" prefWidth="309.0" promptText="Bank Account Number" unFocusColor="BLACK" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

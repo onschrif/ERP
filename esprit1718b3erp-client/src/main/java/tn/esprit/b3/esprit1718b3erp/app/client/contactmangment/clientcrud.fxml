@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ahmedclientpane" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.contactmangment.ClientCrudController">
+   <children>
+      <JFXTextField fx:id="searchclient" focusColor="#9e9e9e" labelFloat="true" layoutX="840.0" layoutY="21.0" maxWidth="418.0" minWidth="289.0" onAction="#searchactio" prefHeight="26.0" prefWidth="418.0" promptText="Search" unFocusColor="#2d52a3" />
+      <HBox layoutX="811.0" layoutY="75.0" prefHeight="54.0" prefWidth="423.0" AnchorPane.rightAnchor="45.0">
+         <children>
+            <JFXButton id="BTNS" fx:id="addclientbtn" onAction="#addclientButtonAction" prefHeight="55.0" prefWidth="101.0" style="-fx-background-color: #00a9e7;" text="ADD" textFill="WHITE" />
+            <JFXButton id="BTNS" fx:id="deleteclientbtn" onAction="#deleteclientButtonAction" prefHeight="56.0" prefWidth="105.0" style="-fx-background-color: #00b56f;" text="DELETE" textFill="WHITE" />
+            <JFXButton id="BTNS" fx:id="etditclientbtn" onAction="#editclientButtonAction" prefHeight="54.0" prefWidth="107.0" style="-fx-background-color: #ff5656;" text="EDIT" textFill="WHITE" />
+            <JFXButton id="BTNS" fx:id="clearbtn" onAction="#clearButtonAction" prefHeight="55.0" prefWidth="108.0" style="-fx-background-color: #273968;" text="CLEAR" textFill="WHITE" />
+         </children>
+      </HBox>
+      <TableView fx:id="idtabviewclient" layoutX="12.0" layoutY="62.0" onMousePressed="#mousepressed" prefHeight="641.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="62.0">
+         <columns>
+            <TableColumn fx:id="idcol" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="firstnamecol" prefWidth="123.2048692703247" style="color: red;" text="FRIST NAME" />
+            <TableColumn fx:id="lastnamecol" prefWidth="108.07674407958984" text="LAST NAME" />
+            <TableColumn fx:id="phonecol" prefWidth="106.8858642578125" text="PHONE" />
+            <TableColumn fx:id="emailcol" prefWidth="140.1141357421875" text="EMAIL" />
+            <TableColumn fx:id="companycol" prefWidth="84.26220703125" text="COMPANY" />
+            <TableColumn fx:id="typecol" minWidth="0.0" prefWidth="63.3995361328125" text="TYPE" />
+            <TableColumn fx:id="notecol" prefWidth="92.60040283203125" text="NOTE" />
+         </columns>
+      </TableView>
+      <GridPane layoutX="811.0" layoutY="137.0" prefHeight="295.0" prefWidth="466.0">
+         <children>
+            <JFXTextField fx:id="firstnameclienttf" focusColor="#9e9e9e" labelFloat="true" prefHeight="28.0" prefWidth="405.0" promptText="FRIST NAME" unFocusColor="#2d52a3" />
+            <JFXComboBox fx:id="typeclientcombo" focusColor="#9e9e9e" prefHeight="26.0" prefWidth="405.0" promptText="TYPE" unFocusColor="#2d52a3" GridPane.rowIndex="5" />
+            <JFXTextField fx:id="lastnameclienttf" focusColor="#9e9e9e" labelFloat="true" prefHeight="29.0" prefWidth="405.0" promptText="LAST NAME" unFocusColor="#2d52a3" GridPane.rowIndex="1" />
+            <JFXTextField fx:id="companyclienttf" focusColor="#9e9e9e" labelFloat="true" prefHeight="26.0" prefWidth="405.0" promptText="COMPANY" unFocusColor="#2d52a3" GridPane.rowIndex="3" />
+            <JFXTextField fx:id="phoneclienttf" focusColor="#9e9e9e" labelFloat="true" promptText="PHONE" unFocusColor="#2d52a3" GridPane.rowIndex="2" />
+            <JFXTextField fx:id="emailclienttf" focusColor="#9e9e9e" promptText="EMAIL" unFocusColor="#2d52a3" GridPane.rowIndex="4" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="805.0" layoutY="438.0" prefHeight="278.0" prefWidth="476.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="48.0" prefWidth="97.0" text="FRIST NAME" textFill="#9e9e9e">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="48.0" prefWidth="104.0" text="LAST NAME" textFill="#9e9e9e" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="54.0" prefWidth="82.0" text="PHONE" textFill="#9e9e9e" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="89.0" text="COMPANY" textFill="#9e9e9e" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="firstnamelb" alignment="CENTER" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lastnamelb" alignment="CENTER" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="companylb" alignment="CENTER" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="191.0" prefHeight="55.0" prefWidth="83.0" text="TYPE" textFill="#9e9e9e" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="typelb" alignment="CENTER" layoutX="128.0" layoutY="192.0" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="phonelb" alignment="CENTER" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="55.0" prefWidth="83.0" text="NOTE" textFill="#9e9e9e" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="notelb" alignment="CENTER" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="92.0" text="EMAIL" textFill="#9e9e9e" GridPane.rowIndex="6">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="notelb" alignment="CENTER" prefHeight="17.0" prefWidth="203.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="emaillb" alignment="CENTER" prefHeight="17.0" prefWidth="212.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="119.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="301.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <ImageView fx:id="drawimage" fitHeight="44.0" fitWidth="47.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="7.0">
+         <image>
+            <Image url="@reorder-option-2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="205.0" layoutX="66.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="2.0">
+         <image>
+            <Image url="@Unknown-2.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="opacitypane" opacity="0.09" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="drawPane" layoutX="10.0" layoutY="53.0" prefHeight="655.0" prefWidth="264.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <GridPane layoutX="58.0" layoutY="42.0" prefHeight="654.0" prefWidth="264.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <JFXButton fx:id="menuclientmangmet" onAction="#goclientmang" prefHeight="131.0" prefWidth="272.0" style="-fx-background-color: #e0e3eb;" text="CLIENT MANAGMENT" textFill="#2d52a3">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menusuppliersmangment" onAction="#gosuppmang" prefHeight="222.0" prefWidth="413.0" style="-fx-background-color: #e0e3eb;" text="SUPPLIERS MANAGMENT" textFill="#2d52a3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menupromotion" onAction="#gopromo" prefHeight="299.0" prefWidth="333.0" style="-fx-background-color: #e0e3eb;" text="PROMOTION" textFill="#2d52a3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menustatistics" onAction="#gostat" prefHeight="367.0" prefWidth="371.0" style="-fx-background-color: #e0e3eb;" text="STATISTICS" textFill="#2d52a3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menulogout" onAction="#logout" prefHeight="313.0" prefWidth="413.0" style="-fx-background-color: #e0e3eb;" text="Log Out" textFill="#2d52a3" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menuinsaclient" onAction="#goinsclient" prefHeight="367.0" prefWidth="371.0" style="-fx-background-color: #e0e3eb;" text="UNSATISFIED CLIENT" textFill="#2d52a3" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

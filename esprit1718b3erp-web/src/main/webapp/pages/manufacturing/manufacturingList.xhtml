@@ -1,0 +1,190 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml"
+                xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="pageTitle">
+				MANUFACTURING PAGE
+			</ui:define>
+	<ui:define name="pageContent">
+
+		<div class="centredZone">
+	<h:form> 
+	 <p:menubar>
+        <p:submenu label="Manufacturing" icon="ui-icon-document">
+           
+            <p:menuitem value="Production" url="#" />
+            <p:menuitem value="Orders" url="#" />
+           
+        </p:submenu>
+ 
+        <p:submenu label="Edit" icon="ui-icon-pencil">
+            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />
+            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />
+        </p:submenu>
+
+        <p:menuitem value="Quit" url="" icon="ui-icon-close" />
+ 
+       
+    </p:menubar>
+	</h:form>
+	<br />
+	
+	<p:breadCrumb>
+	  <p:menuitem value="Home" url="" />
+    <p:menuitem value="Production" url="" />
+    
+    
+	</p:breadCrumb>
+	
+	<br />
+	
+	 <p:commandButton value="ADD " action="#{manufacturingList.doredirectToAddAction()}" style="left" icon="ui-icon-plus"></p:commandButton>
+	
+	<h:form id="form">
+	
+   
+ <br />
+ <p:dataTable var="prd" value="#{manufacturingList.productions}"   paginator="true" rows="5" rowsPerPageTemplate="5,10"
+ paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+ >
+    <p:column headerText="Id Production">
+        <h:outputText value="#{prd.idProduction}" />
+    </p:column>
+ 
+    <p:column headerText="Start Day">
+        <h:outputText value="#{prd.startDay}" />
+    </p:column>
+    
+     <p:column headerText="Duration(h)">
+        <h:outputText value="#{prd.numberHeures}" />
+    </p:column>
+ 
+    <p:column headerText="Deadline">
+        <h:outputText value="#{prd.endDay}" />
+    </p:column>
+ 
+    <p:column headerText="Quantity to produce">
+        <h:outputText value="#{prd.qteToProduce}" />
+    </p:column>
+    
+    <p:column headerText="Employee">
+        <h:outputText value="#{prd.pr_employee.firstName}" />
+    </p:column>
+    
+    
+    <p:column headerText="Product">
+        <h:outputText value="#{prd.pr_product.ref}" /> 
+    </p:column>
+    
+         <p:column headerText="" >
+          <p:commandLink title="View Detail" onclick="PF('dlg2').show();" update=":form:ManufDetail">
+                  <h:outputText styleClass="ui-icon ui-icon-search" style="margin:0 auto;" />
+                  <f:setPropertyActionListener value="#{prd}" target="#{manufacturingList.selectedProduction}"></f:setPropertyActionListener> 
+           </p:commandLink>
+         </p:column>
+         
+    	
+         <p:column headerText="" >
+    	  <p:commandLink title="Modification" onclick="PF('dlg3').show();" update=":form:updating">
+    	  		  <h:outputText styleClass="ui-icon ui-icon-pencil" style="margin:0 auto;" />
+                  <f:setPropertyActionListener value="#{prd}" target="#{manufacturingList.selectedProduction}"></f:setPropertyActionListener>	        
+         </p:commandLink>
+         </p:column>     
+         
+          <p:column headerText="" >
+    	  <p:commandLink title="Confiramtion" onclick="PF('dlg').show();" update=":form:confiramtion">
+    	  		  <h:outputText styleClass="ui-icon ui-icon-trash" style="margin:0 auto;" />
+                  <f:setPropertyActionListener value="#{prd}" target="#{manufacturingList.selectedProduction}"></f:setPropertyActionListener>	        
+         </p:commandLink>
+         </p:column>     
+    
+</p:dataTable>
+  
+
+    
+    
+		 <p:dialog header="Detail" widgetVar="dlg2" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+		       <p:outputPanel id="ManufDetail" style="text-align:center;">
+		      
+		            <h:panelGrid  columns="2" rendered="#{not empty manufacturingList.selectedProduction}" columnClasses="label,value">
+		              
+		 
+		                <h:outputText value="Id:" />
+		                <h:outputText value="#{manufacturingList.selectedProduction.idProduction}" />
+		 
+		               
+		            </h:panelGrid>
+		        </p:outputPanel>
+		    </p:dialog>
+		    
+		  <p:dialog header="Confiramtion" widgetVar="dlg" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+		        <p:outputPanel id="confiramtion" style="text-align:center;">
+		                    	 
+		         <h:panelGrid columns="2" styleClass="text-align:center;" >
+	             <f:facet name="header">
+				        <p:row>
+				            <p:column colspan="2"><h3>Are you sure? ?</h3></p:column>
+				        </p:row>
+	  			  </f:facet>
+			       <f:facet name="footer">
+			        <p:row>
+			            <p:column>
+			             <p:commandButton value="Yes"  update="growl" action="#{manufacturingList.doYes()}" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+			            </p:column>
+			            
+			            <p:column  >
+			       		 <p:commandButton value="No"  action="#{manufacturingList.doNo()}" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			            </p:column>
+			        </p:row>
+			        </f:facet>
+		       </h:panelGrid>
+		        </p:outputPanel>
+		    </p:dialog>
+		
+		<p:dialog header="Update Production" widgetVar="dlg3" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+	       <p:outputPanel id="updating" style="text-align:center;">
+	      
+	            <h:panelGrid  columns="2" rendered="#{not empty manufacturingList.selectedProduction}" >
+	             
+	              <f:facet name="header">
+				        <p:row>
+				            <p:column colspan="2"><h3>Updating Production N°  <h:outputText value="#{manufacturingList.selectedProduction.idProduction}" /></h3></p:column>
+				        </p:row>
+	  			  </f:facet>
+			    
+			    
+			       <f:facet name="footer">
+			        <p:row>
+			            <p:column>
+			             <p:commandButton value="Edit"  update="growl" action="#{manufacturingList.doYes()}" styleClass="ui-confirmdialog-yes" icon="ui-icon-pencil" />
+			            </p:column>
+			            
+			            <p:column  >
+			       		 <p:commandButton value="Cancel"  action="#{manufacturingList.doCancelUp()}" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+			            </p:column>
+			        </p:row>
+			        </f:facet>
+		       
+	 
+	               
+	            </h:panelGrid>
+	        </p:outputPanel>
+    	</p:dialog>c
+   
+		     	   
+		     	    <p:growl id="growl" showDetail="true" sticky="true" />  
+    
+</h:form>
+ 
+
+	
+	
+
+		</div>
+		
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ahmedclientpane" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.contactmangment.SuppliersCrudController">
+   <children>
+      <JFXTextField fx:id="searchsupp" focusColor="#9e9e9e" labelFloat="true" layoutX="840.0" layoutY="21.0" maxWidth="418.0" minWidth="289.0" onAction="#searchaction" prefHeight="26.0" prefWidth="418.0" promptText="Search" unFocusColor="#2d52a3" />
+      <HBox layoutX="811.0" layoutY="75.0" prefHeight="54.0" prefWidth="423.0" AnchorPane.rightAnchor="45.0">
+         <children>
+            <JFXButton id="BTNS" fx:id="addsuppbtn" onAction="#addsuppButtonAction" prefHeight="55.0" prefWidth="101.0" style="-fx-background-color: #00a9e7;" text="ADD" textFill="WHITE" />
+            <JFXButton id="BTNS" fx:id="deletesuppbtn" onAction="#deleteButtonAction" prefHeight="56.0" prefWidth="105.0" style="-fx-background-color: #00b56f;" text="DELETE" textFill="WHITE" />
+            <JFXButton id="BTNS" fx:id="etditsuppbtn" onAction="#editButtonAction" prefHeight="54.0" prefWidth="107.0" style="-fx-background-color: #ff5656;" text="EDIT" textFill="WHITE" />
+            <JFXButton id="BTNS" fx:id="clearbtn" onAction="#clearButtonAction" prefHeight="55.0" prefWidth="108.0" style="-fx-background-color: #273968;" text="CLEAR" textFill="WHITE" />
+         </children>
+      </HBox>
+      <TableView fx:id="idtabviewsupp" layoutX="12.0" layoutY="62.0" onMousePressed="#mousepressed" prefHeight="641.0" prefWidth="785.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="503.0" AnchorPane.topAnchor="62.0">
+         <columns>
+            <TableColumn fx:id="idcol" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="namecol" prefWidth="123.2048692703247" style="color: red;" text="NAME" />
+            <TableColumn fx:id="adresscol" prefWidth="241.0" text="ADRESS" />
+            <TableColumn fx:id="phonecol" prefWidth="160.0" text="PHONE" />
+            <TableColumn fx:id="emailcol" prefWidth="196.0" text="EMAIL" />
+         </columns>
+      </TableView>
+      <GridPane layoutX="811.0" layoutY="137.0" prefHeight="295.0" prefWidth="466.0">
+         <children>
+            <JFXTextField fx:id="nameclienttf" focusColor="#9e9e9e" labelFloat="true" prefHeight="28.0" prefWidth="405.0" promptText="NAME" unFocusColor="#2d52a3" />
+            <JFXTextField fx:id="adressclienttf" focusColor="#9e9e9e" labelFloat="true" prefHeight="29.0" prefWidth="405.0" promptText="ADRESS" unFocusColor="#2d52a3" GridPane.rowIndex="1" />
+            <JFXTextField fx:id="phoneclienttf" focusColor="#9e9e9e" labelFloat="true" promptText="PHONE" unFocusColor="#2d52a3" GridPane.rowIndex="2" />
+            <JFXTextField fx:id="emailclienttf" focusColor="#9e9e9e" promptText="EMAIL" unFocusColor="#2d52a3" GridPane.rowIndex="3" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <GridPane layoutX="805.0" layoutY="438.0" prefHeight="278.0" prefWidth="476.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="48.0" prefWidth="97.0" text="NAME" textFill="#9e9e9e">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="48.0" prefWidth="104.0" text="ADRESS" textFill="#9e9e9e" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="54.0" prefWidth="82.0" text="PHONE" textFill="#9e9e9e" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="namelb" alignment="CENTER" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="adressnamelb" alignment="CENTER" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="phonelb" alignment="CENTER" prefHeight="17.0" prefWidth="205.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="18.0" prefWidth="92.0" text="EMAIL" textFill="#9e9e9e" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="emaillb" alignment="CENTER" prefHeight="17.0" prefWidth="212.0" textFill="#9e9e9e" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="119.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="301.0" minWidth="10.0" prefWidth="301.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <ImageView fx:id="drawimage" fitHeight="44.0" fitWidth="47.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="7.0">
+         <image>
+            <Image url="@reorder-option-2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="205.0" layoutX="66.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="2.0">
+         <image>
+            <Image url="@Unknown-2.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="opacitypane" layoutX="3.0" opacity="0.09" prefHeight="713.0" prefWidth="1301.0" style="-fx-background-color: #000;" />
+      <AnchorPane fx:id="drawPane" layoutX="20.0" layoutY="63.0" prefHeight="655.0" prefWidth="264.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <GridPane layoutX="58.0" layoutY="42.0" prefHeight="654.0" prefWidth="264.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="menuclientmangmet" onAction="#goclientmang" prefHeight="131.0" prefWidth="272.0" style="-fx-background-color: #e0e3eb;" text="CLIENT MANAGMENT" textFill="#2d52a3">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menusuppliersmangment" onAction="#gosuppmang" prefHeight="222.0" prefWidth="413.0" style="-fx-background-color: #e0e3eb;" text="SUPPLIERS MANAGMENT" textFill="#2d52a3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menupromotion" onAction="#gopromo" prefHeight="299.0" prefWidth="333.0" style="-fx-background-color: #e0e3eb;" text="PROMOTION" textFill="#2d52a3" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menustatistics" onAction="#gostat" prefHeight="367.0" prefWidth="371.0" style="-fx-background-color: #e0e3eb;" text="STATISTICS" textFill="#2d52a3" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menulogout" onAction="#logout" prefHeight="313.0" prefWidth="413.0" style="-fx-background-color: #e0e3eb;" text="Log Out" textFill="#2d52a3" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="menuinsaclient" onAction="#goinsclient" prefHeight="367.0" prefWidth="371.0" style="-fx-background-color: #e0e3eb;" text="UNSATISFIED CLIENT" textFill="#2d52a3" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="AppleMyungjo Regular" size="17.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

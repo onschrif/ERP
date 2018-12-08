@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="balap" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.accounting.BalanceController">
+   <children>
+      <Separator layoutX="40.0" layoutY="160.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Label layoutX="574.0" layoutY="53.0" prefHeight="28.0" prefWidth="165.0" text="Balance Sheet">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="586.0" layoutY="77.0" prefHeight="20.0" prefWidth="165.0" text="Verax Magus" textFill="#726e6e">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="146.0" prefHeight="14.0" prefWidth="155.0" text="Current Assets">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="1237.0" layoutY="87.0" prefHeight="15.0" prefWidth="37.0" text="As of">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="datelb" layoutX="1197.0" layoutY="104.0" prefHeight="19.0" prefWidth="78.0" text="2017-03-03">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button id="hamb" mnemonicParsing="false" onAction="#dsh" prefHeight="36.0" prefWidth="47.0" style="-fx-background-color: transparent;" styleClass="hamb" stylesheets="@../login/style.css" text="Button" />
+      <Label layoutX="40.0" layoutY="172.0" prefHeight="14.0" prefWidth="155.0" text="Bank Accounts">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="40.0" layoutY="183.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Separator layoutX="40.0" layoutY="162.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Separator layoutX="40.0" layoutY="205.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Label layoutX="40.0" layoutY="192.0" prefHeight="14.0" prefWidth="155.0" text="Cash Account">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="209.0" prefHeight="28.0" prefWidth="155.0" text="Available Assets">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb1" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="169.0" prefHeight="21.0" prefWidth="103.0">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font></Label>
+      <Label fx:id="lb2" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="191.0" prefHeight="21.0" prefWidth="103.0">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font></Label>
+      <Label fx:id="lb3" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="211.0" prefHeight="25.0" prefWidth="103.0">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font></Label>
+      <Separator layoutX="40.0" layoutY="230.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Separator layoutX="40.0" layoutY="228.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Label layoutX="40.0" layoutY="237.0" prefHeight="21.0" prefWidth="53.0" text="TOTAL">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb4" alignment="CENTER_RIGHT" layoutX="1165.0" layoutY="242.0" prefHeight="21.0" prefWidth="103.0" text="0 $">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb8" alignment="CENTER_RIGHT" layoutX="1168.0" layoutY="350.0" prefHeight="19.0" prefWidth="103.0" text="0 $">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="348.0" prefHeight="21.0" prefWidth="87.0" text="TOTAL">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="40.0" layoutY="339.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Separator layoutX="40.0" layoutY="341.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Label layoutX="40.0" layoutY="320.0" prefHeight="28.0" prefWidth="155.0" text="Salaries">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="303.0" prefHeight="14.0" prefWidth="155.0" text="Amortization rates">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="40.0" layoutY="320.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Separator layoutX="40.0" layoutY="273.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Separator layoutX="40.0" layoutY="297.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Label layoutX="40.0" layoutY="283.0" prefHeight="14.0" prefWidth="155.0" text="Company Expenses">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="47.0" layoutY="271.0" prefHeight="14.0" prefWidth="1223.0" />
+      <Label layoutX="40.0" layoutY="260.0" prefHeight="21.0" prefWidth="160.0" text="Current Liabilities">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="373.0" prefHeight="21.0" prefWidth="160.0" text="Owner's Equity">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="40.0" layoutY="384.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Label layoutX="40.0" layoutY="396.0" prefHeight="14.0" prefWidth="155.0" text="Company Taxes">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="33.0" layoutY="407.0" prefHeight="14.0" prefWidth="1235.0" />
+      <Separator layoutX="40.0" layoutY="386.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Separator layoutX="40.0" layoutY="429.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Label layoutX="40.0" layoutY="416.0" prefHeight="18.0" prefWidth="223.0" text="Retained Earnings (Before Taxes)">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="40.0" layoutY="432.0" prefHeight="14.0" prefWidth="1229.0" />
+      <Label layoutX="40.0" layoutY="441.0" prefHeight="21.0" prefWidth="116.0" text="NET BALANCE">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb11" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="438.0" prefHeight="21.0" prefWidth="103.0" text="0 $">
+         <font>
+            <Font name="Tahoma Bold" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="-250.0" prefHeight="769.0" prefWidth="250.0" styleClass="box">
+         <children>
+            <HBox alignment="BASELINE_LEFT" prefHeight="70.0" spacing="5.0" styleClass="box-logo" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="245.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="logo" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#toDashboard" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: transparent;" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="60.0" pannable="true" prefViewportHeight="710.0" prefViewportWidth="220.0" styleClass="scroll" stylesheets="@../login/style.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <content>
+                  <VBox prefHeight="784.0" prefWidth="248.0" spacing="5.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <VBox layoutY="35.0" styleClass="box-menus" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+                           <children>
+                              <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Bills &amp; Assets">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao" layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton fx:id="btCatalogar" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" onAction="#toInv" prefWidth="187.0" text="Invoice" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-invoice" />
+                                       </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoCatalogacao" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btEstratigrafia" alignment="CENTER_LEFT" layoutX="40.0" layoutY="40.0" maxWidth="215.0" mnemonicParsing="false" onAction="#toCash" prefWidth="215.0" text="Cash flow" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-cash" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btColecao" alignment="CENTER_LEFT" layoutX="40.0" layoutY="70.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toAsset" text="Assets" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-asset" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btColecao1" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toBanking" text="Banking" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-bank" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                              <ToggleButton fx:id="btVisitas" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toExp" text="Expenses" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-visitantes" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <VBox fx:id="boxVisitas" styleClass="box-submenus" />
+                              <ToggleButton fx:id="btEmprestimos" alignment="CENTER_LEFT" layoutX="10.0" layoutY="145.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toBalance" selected="true" text="Balance Sheet" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-emprestimo" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <VBox fx:id="boxEmprestimo" layoutX="10.0" layoutY="180.0" styleClass="box-submenus" />
+                              <ToggleButton fx:id="btUtilitarios" alignment="CENTER_LEFT" layoutX="10.0" layoutY="560.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toTax" text="Taxation" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-utilidade" />
+                                 </styleClass>
+                              </ToggleButton>
+                           </children>
+                        </VBox>
+                        <AnchorPane maxHeight="30.0" minHeight="30.0" prefHeight="30.0" styleClass="box-user">
+                           <children>
+                              <Label fx:id="lbUser" maxWidth="150.0" prefWidth="150.0" styleClass="lb-user" text="Maiza Houcem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                              <Button layoutX="145.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" styleClass="menu-sair" text="Disconnect" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Label fx:id="lb5" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="280.0" prefHeight="21.0" prefWidth="103.0">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb6" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="303.0" prefHeight="25.0" prefWidth="103.0">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb7" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="325.0" prefHeight="21.0" prefWidth="103.0">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb9" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="393.0" prefHeight="21.0" prefWidth="103.0">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb10" alignment="CENTER_RIGHT" layoutX="1166.0" layoutY="412.0" prefHeight="25.0" prefWidth="103.0">
+         <font>
+            <Font name="Tahoma" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="1233.0" layoutY="-1.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="71.0" styleClass="close" text="Fechar" />
+      <Button layoutX="1171.0" layoutY="-1.0" mnemonicParsing="false" onAction="#minimize" prefHeight="30.0" prefWidth="78.0" styleClass="minimizar" text="Minimizar" />
+      <Pane layoutX="743.0" layoutY="487.0" prefHeight="270.0" prefWidth="484.0" style="-fx-background-color: white; -fx-background-radius: 25;">
+         <children>
+            <Label fx:id="gbplb" layoutX="219.0" layoutY="48.0" prefHeight="22.0" prefWidth="173.0">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="46.0" prefHeight="26.0" prefWidth="124.0" text="Balance in GBP">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="3.0" prefHeight="22.0" prefWidth="185.0" styleClass="box-subtitulos" text="Currency Equivalent" />
+            <Label layoutX="24.0" layoutY="77.0" prefHeight="26.0" prefWidth="124.0" text="Balance in YEN">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="yenlb" layoutX="219.0" layoutY="79.0" prefHeight="22.0" prefWidth="173.0">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="107.0" prefHeight="26.0" prefWidth="124.0" text="Balance in EUR">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="eurlb" layoutX="219.0" layoutY="109.0" prefHeight="22.0" prefWidth="173.0">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="cnylb" layoutX="219.0" layoutY="141.0" prefHeight="22.0" prefWidth="173.0">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="139.0" prefHeight="26.0" prefWidth="124.0" text="Balance in CNY">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="cadlb" layoutX="219.0" layoutY="173.0" prefHeight="22.0" prefWidth="173.0">
+               <font>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="171.0" prefHeight="26.0" prefWidth="124.0" text="Balance in CAD">
+               <font>
+                  <Font name="Tahoma" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <BarChart fx:id="ac" barGap="20.0" categoryGap="250.0" layoutX="132.0" layoutY="489.0" prefHeight="270.0" prefWidth="552.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

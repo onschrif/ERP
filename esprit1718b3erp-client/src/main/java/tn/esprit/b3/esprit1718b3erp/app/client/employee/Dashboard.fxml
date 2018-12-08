@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="dash-anchor" fx:id="dashpane" maxHeight="700.0" minHeight="700.0" minWidth="1300.0" prefHeight="700.0" styleClass="dash-anchor" stylesheets="@../login/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.employee.DashboardController">
+    <children>
+      <Pane layoutX="873.0" layoutY="402.0" prefHeight="296.0" prefWidth="404.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <PieChart fx:id="piechartDepartment" layoutX="1.0" layoutY="16.0" prefHeight="278.0" prefWidth="404.0" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="374.0" styleClass="box-subtitulos" text="Staff Size bu Department" />
+         </children></Pane>
+      <Pane layoutX="46.0" layoutY="64.0" prefHeight="77.0" prefWidth="195.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="14.0" layoutY="8.0" prefHeight="18.0" prefWidth="61.0" styleClass="box-subtitulos" text="Staff Count">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="employeecount" layoutX="90.0" layoutY="17.0" prefHeight="43.0" prefWidth="6.0" style="-fx-text-alignment: center;" text="0" wrapText="true">
+               <font>
+                  <Font size="29.0" />
+               </font></Label>
+         </children></Pane>
+      <Pane layoutX="44.0" layoutY="152.0" prefHeight="250.0" prefWidth="404.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="374.0" styleClass="box-subtitulos" text="Marital Status" />
+            <PieChart fx:id="piechartMarital" layoutX="-3.0" layoutY="7.0" prefHeight="250.0" prefWidth="411.0" />
+         </children></Pane>
+      <Pane layoutX="46.0" layoutY="412.0" prefHeight="286.0" prefWidth="404.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <StackedBarChart fx:id="stackedbarchart" layoutY="28.0" prefHeight="250.0" prefWidth="404.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="xdepartment" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="yemployeess" side="LEFT" />
+              </yAxis>
+            </StackedBarChart>
+            <Label layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="374.0" styleClass="box-subtitulos" text="Leave Amount by Type" />
+         </children></Pane>
+      <Pane layoutX="248.0" layoutY="64.0" prefHeight="77.0" prefWidth="195.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="61.0" styleClass="box-subtitulos" text="Male Staffs">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="malestaff" layoutX="90.0" layoutY="17.0" text="0" wrapText="true">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="873.0" layoutY="62.0" prefHeight="328.0" prefWidth="404.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="357.0" styleClass="box-subtitulos" text="Average Age" />
+            <BarChart fx:id="barchart" layoutX="7.0" layoutY="40.0" prefHeight="286.0" prefWidth="391.0">
+              <xAxis>
+                <CategoryAxis fx:id="agex" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="employeesy" side="LEFT" />
+              </yAxis>
+            </BarChart>
+         </children></Pane>
+        <HBox prefHeight="60.0" prefWidth="1207.0" styleClass="box-topo" stylesheets="@../login/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label fx:id="lbTitulo" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="1200.0" styleClass="titulo" text="             Dashboard" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS">
+                </Label>
+            </children>
+        </HBox>
+      <Button layoutX="1167.0" mnemonicParsing="false" onAction="#minimize" prefHeight="30.0" prefWidth="78.0" styleClass="minimizar" text="Minimizar" />
+      <Button layoutX="1229.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="71.0" styleClass="close" text="Fechar" />
+      <AnchorPane layoutX="-250.0" prefHeight="769.0" prefWidth="250.0" styleClass="box">
+         <children>
+            <HBox alignment="BASELINE_LEFT" prefHeight="70.0" spacing="5.0" styleClass="box-logo" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="245.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="logo" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#home" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: transparent;" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="60.0" pannable="true" prefViewportHeight="710.0" prefViewportWidth="220.0" styleClass="scroll" stylesheets="@../login/style.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <content>
+                  <VBox prefHeight="784.0" prefWidth="248.0" spacing="5.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <VBox layoutY="35.0" styleClass="box-menus" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+                           <children>
+                              <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Human Resources Managment">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao" layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton fx:id="btCatalogar" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" onAction="#toInv" prefWidth="187.0" text="Employees" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-invoice" />
+                                       </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoCatalogacao" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btEstratigrafia" alignment="CENTER_LEFT" layoutX="40.0" layoutY="40.0" maxWidth="215.0" mnemonicParsing="false" onAction="#toCash" prefWidth="215.0" text="Leaves" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-cash" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btColecao" alignment="CENTER_LEFT" layoutX="40.0" layoutY="70.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toAssets" text="Paymentsheet" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-asset" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btColecao1" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toBanking" text="Timesheet" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-bank" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane maxHeight="30.0" minHeight="30.0" prefHeight="30.0" styleClass="box-user">
+                           <children>
+                              <Label fx:id="lbUser" maxWidth="150.0" prefWidth="150.0" styleClass="lb-user" text="Yossra Gharbi" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                              <Button layoutX="145.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" styleClass="menu-sair" text="Disconnect" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Button layoutX="14.0" layoutY="8.0" mnemonicParsing="false" onAction="#dsh" prefHeight="54.0" prefWidth="69.0" style="-fx-background-color: transparent;" styleClass="hamb" text="Button" />
+      <Pane layoutX="456.0" layoutY="64.0" prefHeight="77.0" prefWidth="195.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="71.0" styleClass="box-subtitulos" text="Female Staffs">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="femalestaff" layoutX="90.0" layoutY="17.0" text="0" wrapText="true">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="456.0" layoutY="152.0" prefHeight="250.0" prefWidth="404.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <PieChart fx:id="piechartGender" layoutX="1.0" layoutY="5.0" prefHeight="250.0" prefWidth="404.0" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="18.0" prefWidth="374.0" styleClass="box-subtitulos" text="Staff Size by Gender" />
+         </children>
+      </Pane>
+      <Pane layoutX="662.0" layoutY="64.0" prefHeight="77.0" prefWidth="195.0" style="-fx-background-color: white; -fx-border-radius: 35; -fx-background-radius: 15;">
+         <children>
+            <Label layoutX="14.0" layoutY="5.0" prefHeight="18.0" prefWidth="78.0" styleClass="box-subtitulos" text="Get Percentage">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="caption" layoutX="59.0" layoutY="17.0" prefHeight="43.0" prefWidth="78.0" />
+         </children>
+      </Pane>
+      <TableView fx:id="salary" layoutX="460.0" layoutY="412.0" prefHeight="232.0" prefWidth="404.0">
+        <columns>
+          <TableColumn fx:id="fNameCol" prefWidth="100.0" text="First Name" />
+          <TableColumn fx:id="lNameCol" minWidth="0.0" prefWidth="110.0" text="Last Name" />
+            <TableColumn fx:id="positionCol" prefWidth="96.0" text="Position" />
+            <TableColumn fx:id="salaryCol" prefWidth="97.0" text="Salary" />
+        </columns>
+      </TableView>
+      <Label layoutX="466.0" layoutY="651.0" text="Total">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="total" layoutX="782.0" layoutY="656.0" prefHeight="27.0" prefWidth="78.0" text="0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

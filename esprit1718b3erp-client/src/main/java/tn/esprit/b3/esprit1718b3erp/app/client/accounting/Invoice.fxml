@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="AssetPane" prefHeight="700.0" prefWidth="1300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.b3.esprit1718b3erp.app.client.accounting.InvoiceController">
+   <children>
+      <Pane id="dp" fx:id="drawerPane" prefHeight="713.0" prefWidth="430.0" visible="false">
+         <children>
+            <ImageView fitHeight="52.0" fitWidth="180.0" layoutX="123.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../../../../../Desktop/IntegrationFinale/Tunisia_Mall/src/tm/assets/logoTM.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="displaypane" layoutX="874.0" layoutY="1.0" prefHeight="694.0" prefWidth="426.0">
+         <children>
+            <HBox layoutX="173.0" layoutY="108.0" prefHeight="52.0" prefWidth="112.0">
+               <children>
+                  <JFXButton id="BTNS" fx:id="btn" onAction="#addpayment" prefHeight="52.0" prefWidth="112.0" style="-fx-background-color: #00a9e7;" text="UPDATE" textFill="WHITE" />
+               </children>
+            </HBox>
+            <GridPane fx:id="assetgrid" layoutX="17.0" layoutY="196.0" prefHeight="319.0" prefWidth="401.0">
+               <children>
+                  <JFXTextField fx:id="nametf" focusColor="#ec0122" labelFloat="true" prefHeight="33.0" prefWidth="401.0" promptText="REF" unFocusColor="#c9c9c9" />
+                  <JFXTextField fx:id="pricetf" focusColor="#ec0122" labelFloat="true" prefHeight="44.0" prefWidth="401.0" promptText="AMOUNT" unFocusColor="#c9c9c9" GridPane.rowIndex="2" />
+                  <JFXComboBox fx:id="typecb" labelFloat="true" prefHeight="33.0" prefWidth="401.0" promptText="BENEFICIARY" GridPane.rowIndex="3" />
+                  <JFXComboBox fx:id="statecb" labelFloat="true" prefHeight="35.0" prefWidth="401.0" promptText="STATE" GridPane.rowIndex="4" />
+                  <JFXComboBox fx:id="respcb" labelFloat="true" prefHeight="29.0" prefWidth="401.0" promptText="CLIENT" GridPane.rowIndex="1" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <Label fx:id="qr_desc" layoutX="59.0" layoutY="638.0" prefHeight="29.0" prefWidth="300.0" text="Scanner le QRCode pour Obtenir les informations" visible="false">
+               <font>
+                  <Font name="Constantia" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="tablepane" prefHeight="713.0" prefWidth="874.0">
+         <children>
+            <TableView fx:id="tbinvoice" layoutY="44.0" onMousePressed="#fill" prefHeight="673.0" prefWidth="874.0">
+               <columns>
+                  <TableColumn fx:id="col1" prefWidth="186.0" text="Reference" />
+                  <TableColumn fx:id="col2" prefWidth="215.0" text="Client" />
+                  <TableColumn fx:id="col3" minWidth="2.0" prefWidth="207.0" text="Amount" />
+                  <TableColumn fx:id="col4" prefWidth="265.0" text="State" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <ImageView fx:id="back" fitHeight="43.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../../../../../../../../../Desktop/IntegrationFinale/Tunisia_Mall/src/tm/assets/nav.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="drawerImage" fitHeight="43.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../../../../../../../../../../../../../../Desktop/IntegrationFinale/Tunisia_Mall/src/tm/assets/nav.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="-250.0" layoutY="-0.0" prefHeight="769.0" prefWidth="250.0" styleClass="box">
+         <children>
+            <HBox alignment="BASELINE_LEFT" prefHeight="70.0" spacing="5.0" styleClass="box-logo" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="68.0" fitWidth="245.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" styleClass="logo" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#toDashboard" prefHeight="70.0" prefWidth="250.0" style="-fx-background-color: transparent;" />
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutY="60.0" pannable="true" prefViewportHeight="710.0" prefViewportWidth="220.0" styleClass="scroll" stylesheets="@../login/style.css" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <content>
+                  <VBox prefHeight="784.0" prefWidth="248.0" spacing="5.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <VBox layoutY="35.0" styleClass="box-menus" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0">
+                           <children>
+                              <ToggleButton fx:id="btCatalogacao" alignment="CENTER_LEFT" layoutX="10.0" layoutY="20.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" selected="true" text="Bills &amp; Assets">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-catalogacao" />
+                                 </styleClass>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="grupoMenus" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <VBox fx:id="boxCatalogacao" layoutX="10.0" layoutY="55.0" styleClass="box-submenus">
+                                 <children>
+                                    <ToggleButton fx:id="btCatalogar" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxWidth="256.0" mnemonicParsing="false" onAction="#toInv" prefWidth="187.0" selected="true" text="Invoice" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-invoice" />
+                                       </styleClass>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoCatalogacao" />
+                                       </toggleGroup>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btEstratigrafia" alignment="CENTER_LEFT" layoutX="40.0" layoutY="40.0" maxWidth="215.0" mnemonicParsing="false" onAction="#toCash" prefWidth="215.0" text="Cash flow" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-cash" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btColecao" alignment="CENTER_LEFT" layoutX="40.0" layoutY="70.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toAsset" text="Assets" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-asset" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btColecao1" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toBanking" text="Banking" toggleGroup="$grupoCatalogacao">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-bank" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                              <ToggleButton fx:id="btVisitas" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toExp" text="Expenses" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-visitantes" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <VBox fx:id="boxVisitas" styleClass="box-submenus" />
+                              <ToggleButton fx:id="btEmprestimos" alignment="CENTER_LEFT" layoutX="10.0" layoutY="145.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toBalance" text="Balance Sheet" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-emprestimo" />
+                                 </styleClass>
+                              </ToggleButton>
+                              <VBox fx:id="boxEmprestimo" layoutX="10.0" layoutY="180.0" styleClass="box-submenus" />
+                              <ToggleButton fx:id="btUtilitarios" alignment="CENTER_LEFT" layoutX="10.0" layoutY="560.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toTax" text="Taxation" toggleGroup="$grupoMenus">
+                                 <styleClass>
+                                    <String fx:value="menus" />
+                                    <String fx:value="menu-utilidade" />
+                                 </styleClass>
+                              </ToggleButton>
+                           </children>
+                        </VBox>
+                        <AnchorPane maxHeight="30.0" minHeight="30.0" prefHeight="30.0" styleClass="box-user">
+                           <children>
+                              <Label fx:id="lbUser" maxWidth="150.0" prefWidth="150.0" styleClass="lb-user" text="Maiza Houcem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0" />
+                              <Button layoutX="145.0" layoutY="4.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" styleClass="menu-sair" text="Disconnect" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <Button id="hamb" mnemonicParsing="false" onAction="#dsh" prefHeight="44.0" prefWidth="48.0" style="-fx-background-color: transparent;" styleClass="hamb" stylesheets="@../login/style.css" />
+      <Button layoutX="1239.0" layoutY="2.0" mnemonicParsing="false" onAction="#close" prefHeight="33.0" prefWidth="71.0" styleClass="close" text="Fechar" />
+      <Button layoutX="1165.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="33.0" prefWidth="82.0" styleClass="minimizar" text="Minimizar" />
+   </children>
+</AnchorPane>
